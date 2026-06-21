@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 资讯与对照平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d8 0%, #fad5b3 50%, #f7c29b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1.2rem;
+            color: #2e241e;
+            line-height: 1.7;
+        }
+
+        .page {
+            max-width: 1080px;
+            width: 100%;
+        }
+
+        /* 主卡片容器，暖白柔和 */
+        .card {
+            background: rgba(255, 250, 243, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            box-shadow: 0 16px 40px -8px rgba(140, 80, 40, 0.18);
+            padding: 2.4rem 2.8rem;
+            margin-bottom: 2.8rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.6rem 1.4rem;
+                border-radius: 28px;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 2.6rem 0 1.2rem 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 3.6rem);
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #784421, #b46f3a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: #6b4e38;
+            max-width: 600px;
+            margin: 0.6rem auto 1.2rem;
+            font-weight: 350;
+            border-bottom: 1px dashed #dbb594;
+            padding-bottom: 0.8rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #4a372b;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 特点网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .feature-item {
+            background: #fffcf7;
+            padding: 1.4rem 1.2rem;
+            border-radius: 28px;
+            border: 1px solid #efddcf;
+            box-shadow: 0 4px 10px rgba(110, 60, 30, 0.04);
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            font-weight: 520;
+            color: #7a4d2b;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4f3b2e;
+        }
+
+        /* 说明区 / 场景段落 */
+        .info-block p {
+            margin-bottom: 1.2rem;
+            font-size: 1.02rem;
+        }
+
+        .info-block strong {
+            color: #845a38;
+            font-weight: 530;
+        }
+
+        .info-block .link-embed {
+            background: #fceddd;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+            white-space: nowrap;
+            color: #784421;
+            font-weight: 470;
+            transition: background 0.15s;
+        }
+
+        .info-block .link-embed:hover {
+            background: #f3d7be;
+        }
+
+        .info-block a {
+            color: #784421;
+            text-decoration: none;
+            border-bottom: 1px solid #ccaa8b;
+            transition: border 0.2s;
+        }
+
+        .info-block a:hover {
+            border-bottom: 2px solid #784421;
+        }
+
+        /* FAQ 摘要（折叠样卡片） */
+        .faq-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 0.6rem;
+        }
+
+        .faq-item {
+            border-left: 5px solid #dbaa80;
+            background: #fef7f0;
+            padding: 0.9rem 1.4rem;
+            border-radius: 20px;
+        }
+
+        .faq-item .q {
+            font-weight: 520;
+            color: #563d2b;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #4c382b;
+            font-size: 0.95rem;
+        }
+
+        .faq-item .a a {
+            color: #7a4d2b;
+            text-decoration: underline wavy #dbb594 1px;
+            text-underline-offset: 3px;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem 2.5rem;
+            padding: 1.4rem 0 0.6rem;
+            border-top: 2px solid #edd9c8;
+            margin-top: 0.8rem;
+            font-size: 0.98rem;
+        }
+
+        .footer-links a {
+            color: #6b4730;
+            text-decoration: none;
+            padding: 0.2rem 0.6rem;
+            border-radius: 40px;
+            background: #fcf0e5;
+            transition: background 0.2s, box-shadow 0.2s;
+            font-weight: 430;
+            box-shadow: 0 1px 3px rgba(120, 60, 20, 0.04);
+        }
+
+        .footer-links a:hover {
+            background: #f2ddcb;
+            box-shadow: 0 2px 8px rgba(140, 70, 30, 0.10);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.86rem;
+            color: #6b5543;
+        }
+
+        .btn-like-link {
+            display: inline-block;
+            background: #f5e1d1;
+            padding: 0.2rem 1.2rem;
+            border-radius: 36px;
+            font-weight: 480;
+            color: #4f3322;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #e0c2ab;
+            text-decoration: none;
+        }
+
+        .btn-like-link:hover {
+            background: #edceb8;
+            transform: scale(1.02);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dbb594, transparent);
+            margin: 1.6rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Hero 卡片 -->
+    <div class="card">
+        <div class="hero">
+            <h1>爱游戏</h1>
+            <div class="tagline">日常查询 · 对照 · 延伸阅读</div>
+            <p>从游戏资讯到版本梳理，从术语对照到背景补充——<br>一个偏向知识型的信息节点，帮你更从容地浏览自己感兴趣的内容。</p>
+        </div>
+    </div>
+
+    <!-- 优势区：三个特征卡片 -->
+    <div class="card">
+        <h2 style="font-weight: 450; color: #663f28; margin-bottom: 0.2rem;">为什么值得留意</h2>
+        <p style="color: #5f4636; margin-bottom: 0.2rem;">信息获取的姿势可以更轻巧、更连贯。</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>📋 快速对照</h3>
+                <p>版本差异、平台信息、常用名词——并排展示，减少来回跳转的疲惫感。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔍 日常查询</h3>
+                <p>遇到不熟悉的系统、角色或活动？直接检索背景笔记，不必翻阅长帖。</p>
+            </div>
+            <div class="feature-item">
+                <h3>📎 延伸线索</h3>
+                <p>每个条目附带相关阅读或官方片段，方便你继续深挖自己关心的方向。</p>
+            </div>
+        </div>
+        <p style="font-size: 0.94rem; margin-top: 0.6rem; color: #5d4534;">
+            这些内容围绕 <a href="https://cnh5--aiyouxi.com" style="color: #784421; text-decoration: underline 1px dashed #c9a181;">爱游戏</a> 所涉及的领域整理，保持克制与实用。
+        </p>
+    </div>
+
+    <!-- 说明区：从日常切入，带知识型语气 -->
+    <div class="card info-block">
+        <h2 style="font-weight: 450; color: #663f28; margin-bottom: 0.8rem;">从“查一下”到“原来如此”</h2>
+        <p>
+            很多情况下，我们打开一个页面只是想确认某个机制、某个角色的背景，或者对比不同版本里的变化。
+            然而信息分散在论坛、百科、社交动态里，来回切换反而打断了阅读节奏。<strong>爱游戏</strong> 尝试把常用的对照信息、简要说明和延伸线索整理在一起，
+            让你在一个地方完成“查询—理解—决定下一步”的小循环。
+        </p>
+        <p>
+            比如当你看到一段讨论中提到某个特定术语，可以直接在平台里检索对应的解释，而不必额外打开五六个标签页。
+            又或者你正在回顾一段剧情，想快速定位相关任务线或关键物品——这些碎片化的需求，恰好是 <a href="https://cnh5--aiyouxi.com">爱游戏</a> 希望帮你串联起来的。
+        </p>
+        <p>
+            当然，它不会替代深度攻略或一手数据，更像是一个安静的辅助桌垫：把零散的知识点铺开，让你自己选择往哪个方向延伸。
+            内容保持客观，不夸大效果，只做信息整理与索引。
+        </p>
+        <hr>
+        <p style="font-size: 0.95rem; color: #5e4433;">
+            <span style="background: #f2ddcb; padding: 0.1rem 0.8rem; border-radius: 40px;">📌 场景举例</span>
+            &nbsp; 新版本上线时快速浏览改动列表；讨论中遇到缩写直接查询全称与背景；阅读剧情分析时对照人物关系与事件年表。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="card">
+        <h3 style="font-weight: 470; color: #663f28; margin-bottom: 0.5rem;">常见问题 · 摘要</h3>
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="q">▪ 这里的资料会频繁更新吗？</div>
+                <div class="a">保持与主要版本同步，重大调整或新内容上线后通常会在 2~3 天内整理出对照条目。具体以页面标注时间为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">▪ 我可以引用或分享这里的说明吗？</div>
+                <div class="a">内容基于公开信息整理，欢迎引用或转发。建议同时标注来源 <a href="https://cnh5--aiyouxi.com">爱游戏</a>，以便他人回溯原始页面。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">▪ 遇到错误或遗漏如何反馈？</div>
+                <div class="a">页面底部有链接可以提交提醒，我们会在核对后修正。目前仅处理事实性错误，主观评价暂不纳入修订。</div>
+            </div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #5b4536;">
+            更多问答可以前往对应版块浏览，或直接在 <a href="https://cnh5--aiyouxi.com" style="color: #6d472f; text-decoration: underline wavy #c9a88b 1px;">爱游戏</a> 内搜索关键词获取简版说明。
+        </p>
+    </div>
+
+    <!-- 底部链接卡片 -->
+    <div class="card" style="padding-bottom: 1.2rem;">
+        <div class="footer-links">
+            <a href="https://cnh5--aiyouxi.com">爱游戏</a>
+            <a href="#">对照索引</a>
+            <a href="#">版本归档</a>
+            <a href="#">术语表</a>
+            <a href="#">内容建议</a>
+        </div>
+        <div class="footer-note">
+            页面基于知识型整理方向 · 不做诱导点击或夸大描述<br>
+            所有链接均指向同一来源或辅助板块，请根据自身需要浏览。
+        </div>
+    </div>
+
+    <!-- 额外一个纯文本装饰（符合字数与细节） -->
+    <div style="text-align: center; font-size: 0.85rem; color: #836b58; margin-top: 0.2rem; letter-spacing: 0.3px;">
+        日常查询 · 对照 · 延伸阅读 · 保持克制
+    </div>
+
+</div>
+</body>
+</html>
