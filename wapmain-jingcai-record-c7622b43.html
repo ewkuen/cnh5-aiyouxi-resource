@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩网 · 快速识别指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2b3c;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* 卡片风格 — 浅灰背景、细边框、柔和阴影 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e3e8ef;
+      border-radius: 18px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+      padding: 2rem 1.8rem;
+      margin-bottom: 1.8rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    /* 标题区域 */
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0d1b2a;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #536471;
+      border-left: 4px solid #b0c4de;
+      padding-left: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-line {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #7f8b9b;
+      margin-top: 0.8rem;
+      border-top: 1px solid #e9edf3;
+      padding-top: 0.8rem;
+    }
+
+    /* 正文排版 */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 1.6rem 0 0.6rem 0;
+      color: #1d2b3f;
+      border-bottom: 1px dashed #dce2ec;
+      padding-bottom: 0.25rem;
+    }
+
+    h2:first-of-type {
+      margin-top: 0.4rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* 引用/提示 风格 */
+    .callout {
+      background: #f6f9fe;
+      border-left: 5px solid #4f7eb3;
+      border-radius: 0 14px 14px 0;
+      padding: 1.1rem 1.3rem;
+      margin: 1.2rem 0;
+      font-size: 0.96rem;
+      color: #1f3856;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .callout strong {
+      color: #1f4b7a;
+    }
+
+    .insight-badge {
+      display: inline-block;
+      background: #e5ecf5;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.18rem 0.7rem;
+      border-radius: 30px;
+      color: #2c4e74;
+      margin-right: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* 列表 — 简洁无装饰 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0.2rem 0;
+    }
+
+    .feature-list li {
+      padding: 0.45rem 0 0.45rem 1.5rem;
+      position: relative;
+      color: #1f2e42;
+    }
+
+    .feature-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #5f7ea0;
+      font-size: 1.1rem;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #1f5792;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+      font-weight: 500;
+    }
+
+    a:hover {
+      border-bottom-color: #1f5792;
+    }
+
+    /* 访问句/收尾 */
+    .visit-sentence {
+      background: #eef3fa;
+      border-radius: 40px;
+      padding: 0.9rem 1.6rem;
+      font-size: 0.98rem;
+      display: inline-block;
+      margin: 0.4rem 0 0.2rem;
+      color: #14273e;
+      border: 1px solid #d7e0eb;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d9e1ec;
+      margin: 1.6rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #7e8b9f;
+      text-align: center;
+      padding: 1.8rem 0 0.6rem 0;
+      border-top: 1px solid #e1e7f0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .hero-title {
+        font-size: 1.9rem;
+      }
+      .hero-sub {
+        font-size: 0.95rem;
+        padding-left: 0.7rem;
+      }
+      h2 {
+        font-size: 1.25rem;
+      }
+      .callout {
+        padding: 0.9rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 文章标题 + 导语 -->
+  <div class="card">
+    <h1 class="hero-title">这是什么网站？给第一次遇见它的人</h1>
+    <div class="hero-sub">从用户视角快速识别「竞彩网」的用途与边界</div>
+    <div class="meta-line">
+      <span>📌 信息整理 · 2025</span>
+      <span>🔍 侧重用途识别</span>
+    </div>
+  </div>
+
+  <!-- 正文多段 + 引用提示 -->
+  <div class="card">
+    <h2>第一眼：它解决什么问题</h2>
+    <p>
+      当你打开一个陌生站点，最直接的需求就是搞清“这里是做什么的”。
+      <strong>竞彩网</strong> 是一个围绕体育竞猜内容提供信息服务的平台，主要面向对足球、篮球等赛事结果有一定了解的用户。
+      它本身并不强调“娱乐”或“游戏”，而是更像一个信息聚合与查询的入口。
+    </p>
+    <p>
+      网站页面结构偏向工具属性：你可以找到当前赛程、历史数据以及相关的参考内容。
+      如果你之前用过类似的信息类站点，会对它的版式感到熟悉——导航清晰、分区明确，没有过多干扰元素。
+    </p>
+
+    <div class="callout">
+      <span class="insight-badge">📎 识别技巧</span>
+      <strong>看标题和主导航</strong> —— 如果首页直接列出赛事列表、指数对比，那么它大概率是数据服务型网站，而非内容社区。
+      用户只需扫一眼就能确认是否符合自己的需求。
+    </div>
+
+    <h2>核心特点：简洁与专注</h2>
+    <p>
+      从界面设计来看，<a href="https://wapmain-jingcai.com">竞彩网</a> 保持了相对克制的视觉语言。
+      没有大面积的动效或弹窗，信息层级主要靠字体和色块区分。对于只想快速获取赛程或比分的用户来说，这种风格能降低认知负担。
+    </p>
+    <ul class="feature-list">
+      <li>赛事信息按时间线排列，方便纵向对比</li>
+      <li>数据以表格和标签为主，减少冗余描述</li>
+      <li>移动端适配友好，窄屏下仍可顺畅浏览</li>
+    </ul>
+
+    <h2>常见的应用场景</h2>
+    <p>
+      根据实际使用习惯，大多数人会在以下时刻访问这类站点：赛前查看对阵名单与历史记录，赛中关注实时变化，
+      赛后回顾整场数据。也有人把它作为日常信息源，用来了解联赛走势或球队状态。
+    </p>
+    <p>
+      需要留意的是，网站提供的是信息参考，所有内容均应以官方发布的最终结果为准。
+      建议结合多个渠道交叉验证，保持理性判断。
+    </p>
+
+    <!-- 引用提示 第二条 -->
+    <div class="callout">
+      <span class="insight-badge">💡 提醒</span>
+      无论你是在手机上直接打开，还是通过其他途径跳转，都可以先观察页面顶部是否显示完整的导航菜单。
+      如果发现异常跳转或内容与体育赛事无关，请立即退出并核对网址。
+    </div>
+
+    <hr>
+
+    <!-- 访问句 — 自然嵌入链接 -->
+    <p style="margin-bottom:0.4rem;">
+      如果你想直接体验它的信息结构，可以访问
+      <a href="https://wapmain-jingcai.com">竞彩网</a>，
+      观察首页如何组织赛事列表与数据模块。
+    </p>
+    <p style="color:#3f556b; margin-top:0.2rem;">
+      建议使用主流浏览器，并注意核对地址栏域名，避免进入仿冒页面。
+    </p>
+
+    <!-- 额外访问句（非链接，仅文字） -->
+    <div class="visit-sentence">
+      ✅ 首次访问时，建议先浏览“赛程”和“数据”两个版块，快速建立对网站结构的认知。
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 — 简洁两个问答 -->
+  <div class="card" style="padding-bottom:1.6rem;">
+    <h2 style="border-bottom-width:0; margin-top:0;">常见疑问摘要</h2>
+
+    <p style="margin-bottom:0.25rem;"><strong>问：</strong>这个网站需要注册才能用吗？</p>
+    <p style="margin-bottom:1rem; color:#3a4d64;">大部分信息浏览功能不需要登录，可以直接查看公开的赛事数据。部分个性化功能可能需要创建账号。</p>
+
+    <p style="margin-bottom:0.25rem;"><strong>问：</strong>手机打开页面显示不全怎么办？</p>
+    <p style="margin-bottom:0.2rem; color:#3a4d64;">尝试开启浏览器的“桌面版网站”模式，或检查屏幕旋转锁定。目前多数页面已适配移动端，极少出现布局错乱。</p>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    本页为用途说明 · 内容仅供参考 · 具体以实际页面为准
+  </div>
+
+</div>
+</body>
+</html>
